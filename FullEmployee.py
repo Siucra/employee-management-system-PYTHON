@@ -1,8 +1,5 @@
-
-
-
 #subclass of Employee (child)
-class PartEmployee:
+class FullEmployee:
 
     #Constructor using super
     def __init__(self, employeeID,name,age,gender,status,rolefullHours,fullAmHour):
