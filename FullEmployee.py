@@ -1,9 +1,15 @@
 #subclass of Employee (child)
-class FullEmployee:
+from Employee import Employee
+
+class FullEmployee(Employee):
 
     #Constructor using super
     def __init__(self, employeeID,name,age,gender,status,rolefullHours,fullAmHour):
-        super.__init__(self, employeeID,name,age,gender,status)
+        
+        #call parent class' constructor
+        super().__init__(self, employeeID,name,age,gender,status)
+        
+        #child specific fields
         self.rolefullHours = rolefullHours
         self.fullAmHour = fullAmHour
 
