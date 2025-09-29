@@ -1,5 +1,6 @@
 from FullEmployee import FullEmployee
 from PartEmployee import PartEmployee
+import Role;
 
 #Parent class
 class Employee:

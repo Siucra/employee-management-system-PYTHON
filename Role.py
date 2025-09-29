@@ -1,9 +1,8 @@
-#subclass of Employee (child)
-
-from Employee import Employee
-
-class Role(Employee):
+class Role():
 
     #constructor with fields
-    def __init__():
-        pass
+    def __init__(self, title, salary):
+
+        #child-specific fields
+        self,title = title
+        self.salary = salary
