@@ -1,6 +1,6 @@
 from FullEmployee import FullEmployee
 from PartEmployee import PartEmployee
-import Role;
+from Role import Role;
 
 #Parent class
 class Employee:
@@ -24,20 +24,20 @@ class Employee:
         print("Status: " + self.status)
         print("-"*16)
 
-        if role is not None:
+        if self.role is not None:
             #you can access attributes/methods directly on the object instead of self/'this'
-            print("Job Title:", role.Title())
-            print("Salary ",role.Salary())
+            print("Job Title:", self.role.title)
+            print("Salary ", self.role.salary)
         else:
             print("No role assigned.")
         
         if isinstance(self, FullEmployee):
-            print("Part-time Hours: "+ self.PartHours())				
-            print("Hourly Rate: " + self.PartAmHour())
+            print("Part-time Hours: "+ self.fullHours)				
+            print("Hourly Rate: " + self.fullAmHour)
 
         elif isinstance(self, PartEmployee):
-            print("Full-time Hours: "+ self.FullHours())
-            print("Hourly Rate: " + self.FullAmHour())
+            print("Full-time Hours: "+ self.partHour)
+            print("Hourly Rate: " + self.partAmHour)
         
         print("-"*16)
         
