@@ -27,7 +27,7 @@ def employeeMenu():
     print("*"*25)
     
     while True:
-        choice = input("Enter a number (1-3): ")
+        choice = input("Enter a number (1-4): ")
         #python switch case(?)
         if choice =="1":
             print("Loading add employee....")
