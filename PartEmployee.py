@@ -5,10 +5,10 @@ from Employee import Employee
 class PartEmployee(Employee):
 
     #Constructor using super
-    def __init__(self, employeeID,name,age,gender,status,partHour, partAmHour):
+    def __init__(self, employeeID,name,age,gender,status,role,partHour, partAmHour):
         
         #call parent class' constructor
-        super().__init__(self, employeeID,name,age,gender,status)
+        super().__init__(employeeID,name,age,gender,status,role)
         
         #child specific fields
         self.partHour = partHour

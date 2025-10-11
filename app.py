@@ -6,12 +6,6 @@ from Role import Role
 
 employee_list = []
 
-def main():
-    prepopulate()
-
-if __name__ == "__main__": # calls main method
-    main()
-
 def prepopulate(): #e = Employee("Alice", 50000)
     global employee_list
 
@@ -33,7 +27,7 @@ def employeeMenu():
     print("*"*25)
     
     while True:
-        choice = input("Enter a number (1-4): ")
+        choice = input("Enter a number (1-3): ")
         #python switch case(?)
         if choice =="1":
             print("Loading add employee....")
@@ -55,7 +49,6 @@ def employeeMenu():
             print("invalid input. Please try again")
             
 def addEmployeeMenu():
-
     pass
 
 
@@ -63,6 +56,14 @@ def gen_id(start=1):
      while True:
          yield start
          start+=1
+
+
+def main():
+    prepopulate()
+
+if __name__ == "__main__": # calls main method
+    main()
+
 
 
 
