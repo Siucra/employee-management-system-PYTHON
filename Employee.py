@@ -1,5 +1,3 @@
-from FullEmployee import FullEmployee
-from PartEmployee import PartEmployee
 from Role import Role;
 
 #Parent class
@@ -15,7 +13,13 @@ class Employee:
         self.role = role
 
     #Print Employee Details
+
+
     def viewEmployeeDetails(self):
+        # Lazy import to avoid circular import
+        from FullEmployee import FullEmployee
+        from PartEmployee import PartEmployee
+
         print("-"*16)
         print("Employee ID: ", self.employeeID)
         print("Name: " +self.name)
