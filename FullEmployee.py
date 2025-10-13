@@ -12,5 +12,11 @@ class FullEmployee(Employee):
         #child specific fields
         self.fullHours = fullHours
         self.fullAmHour = fullAmHour
+    
+    def __str__(self):
+        #get base info from parent
+        base = super().__str__().rstrip(")") #remove closing parenthesis
+        return base + f", fullHours={self.fullHours}, fullAmHour={self.fullAmHour})"
+
 
         
