@@ -17,8 +17,8 @@ class Employee:
         print(self) # aka print(str(self)) -> uses __str__()
         
         
-    def __str__(self):
-         return (
+def __str__(self):
+    base = (
         f"Employee("
         f"employeeID={self.employeeID}, "
         f"name={self.name}, "
@@ -26,5 +26,11 @@ class Employee:
         f"gender={self.gender}, "
         f"status={self.status}"
     )
+
+    if self.role is not None:
+        base += f", role={self.role}"
+
+    base += ")"
+    return base
 
     

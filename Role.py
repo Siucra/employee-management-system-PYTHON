@@ -6,3 +6,7 @@ class Role:
         #child-specific fields
         self.title = title
         self.salary = salary
+    
+    #POLYMORPHISM
+    def __str__(self):
+        return f"{self.title} (${self.salary})"
