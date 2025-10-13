@@ -15,7 +15,7 @@ def prepopulate(): #e = Employee("Alice", 50000)
     r2 = Role("Janitor",300000)
     pe1 = PartEmployee(2,"Jen",21,"Female","Junior",r2,20,15.50)
 
-    employee_list = [r1,r2]
+    employee_list = [fe1,pe1]
 
 def employeeMenu():
     print("*"*25)
