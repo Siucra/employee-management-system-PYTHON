@@ -21,27 +21,27 @@ class Employee:
         from PartEmployee import PartEmployee
 
         print("-"*16)
-        print("Employee ID: ", self.employeeID)
-        print("Name: " +self.name)
-        print("Age: "+ self.age)
-        print("Sex: "+self.gender)
-        print("Status: " + self.status)
+        print(f"Employee ID:  {self.employeeID}")
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Sex: {self.gender}")
+        print(f"Status: {self.status}")
         print("-"*16)
 
         if self.role is not None:
             #you can access attributes/methods directly on the object instead of self/'this'
-            print("Job Title:", self.role.title)
-            print("Salary ", self.role.salary)
+            print(f"Job Title: {self.role.title}")
+            print(f"Salary  {self.role.salary}")
         else:
             print("No role assigned.")
         
         if isinstance(self, FullEmployee):
-            print("Part-time Hours: "+ self.fullHours)				
-            print("Hourly Rate: " + self.fullAmHour)
+            print(f"Part-time Hours: {self.fullHours}")				
+            print(f"Hourly Rate: {self.fullAmHour}")
 
         elif isinstance(self, PartEmployee):
-            print("Full-time Hours: "+ self.partHour)
-            print("Hourly Rate: " + self.partAmHour)
+            print(f"Full-time Hours: {self.partHour}")
+            print(f"Hourly Rate: {self.partAmHour}")
         
         print("-"*16)
         
