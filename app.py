@@ -55,10 +55,14 @@ def gen_id(start=1):
 
 def addEmployeeMenu():
     print("-"*25)
-    
-    id_generator = gen_id(1)
 
-    e = Employee(next(id_generator))
+    id_generator = gen_id(1)
+    e = Employee(next(id_generator)) # ceeate new employee with next available ID
+
+    print("")
+    e.set_name(input())
+
+    
 
 
 
@@ -67,6 +71,7 @@ def main():
 
 if __name__ == "__main__": # calls main method
     main()
+
 
 
 
