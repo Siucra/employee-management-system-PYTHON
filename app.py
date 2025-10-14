@@ -47,15 +47,19 @@ def employeeMenu():
             break
         else:
             print("invalid input. Please try again")
-            
-def addEmployeeMenu():
-    pass
-
 
 def gen_id(start=1):
-     while True:
-         yield start
-         start+=1
+    while True:
+        yield start
+        start+=1
+
+def addEmployeeMenu():
+    print("-"*25)
+    
+    id_generator = gen_id(1)
+
+    e = Employee(next(id_generator))
+
 
 
 def main():
