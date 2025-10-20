@@ -60,7 +60,16 @@ def addEmployeeMenu():
 
     e.name = input("Enter Employee name")
 
-    e.age = int(input("Enter Employee age"))
+    while True:
+        ageInput = input("Enter Employee age")
+        if ageInput.isdigit(): #error catching without using try/except -> checks if user entered only integers
+            e.age = int(ageInput)
+            if e.age > 0:
+                break
+            else:
+                print("Age must be greater than zero.")
+        else:
+            print("Invalid input. Please enter a number.")
 
     while(True):
         e.gender = input("Enter Employee gender: ")
@@ -83,21 +92,23 @@ def addEmployeeMenu():
 
     while(True):
         print("-"*15)
-        print("Is this Employee Part/Full ?")
-        empType = input("Enter either 'Part' or 'Full'")
+        empType = input("Is this Employee Part/Full? Enter  ('Part' or 'Full')")
+        
         if empType.lower() == 'part':
             print("'Part' option has been selected")
             pe = PartEmployee(e,r)
             addPartEmployee(pe)
             break
+        
         elif empType.lower() == 'full':
             print("'Part' option has been selected")
             fe = FullEmployee(e,r)
             addFullEmployee(fe)
             break
+        
         else:
             print("Invalid input. Please try again.")
-            break
+            
 
 def addPartEmployee(pe):
     pass
