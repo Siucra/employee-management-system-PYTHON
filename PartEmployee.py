@@ -1,7 +1,6 @@
 #subclass of Employee (child)
 from Employee import Employee
 
-
 class PartEmployee(Employee):
 
     #Constructor using super

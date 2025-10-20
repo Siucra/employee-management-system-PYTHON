@@ -3,7 +3,6 @@ from FullEmployee import FullEmployee
 from PartEmployee import PartEmployee
 from Role import Role
 
-
 employee_list = []
 
 def prepopulate(): #e = Employee("Alice", 50000)
@@ -59,12 +58,52 @@ def addEmployeeMenu():
     id_generator = gen_id(1)
     e = Employee(next(id_generator)) # ceeate new employee with next available ID
 
-    print("")
-    e.set_name(input())
+    e.name = input("Enter Employee name")
 
+    e.age = int(input("Enter Employee age"))
+
+    while(True):
+        e.gender = input("Enter Employee gender: ")
+        if e.gender.lower()=="male" or e.gender.lower()=="female":
+            break
+        else:
+            print("Invalid input. Please either enter 'Male' or 'Female")
     
+    while(True):
+        e.status = input("Enter Employee status: Junior/Senior")
+        if e.status.lower() =="junior" or e.status.lower()=="senior":
+            break
+        else:
+            print("invalid input. Please enter 'Junior' or 'Senior'")
 
+    r = Role()
 
+    r.title = input("Enter Employee Job Title")
+    r.salary = float(input("Enter employee annual salary"))
+
+    while(True):
+        print("-"*15)
+        print("Is this Employee Part/Full ?")
+        empType = input("Enter either 'Part' or 'Full'")
+        if empType.lower() == 'part':
+            print("'Part' option has been selected")
+            pe = PartEmployee(e,r)
+            addPartEmployee(pe)
+            break
+        elif empType.lower() == 'full':
+            print("'Part' option has been selected")
+            fe = FullEmployee(e,r)
+            addFullEmployee(fe)
+            break
+        else:
+            print("Invalid input. Please try again.")
+            break
+
+def addPartEmployee(pe):
+    pass
+
+def addFullEmployee(fe):
+    pass
 
 def main():
     prepopulate()
