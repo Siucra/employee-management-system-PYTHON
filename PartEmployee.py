@@ -4,10 +4,10 @@ from Employee import Employee
 class PartEmployee(Employee):
 
     #Constructor using super
-    def __init__(self, employeeID,name,age,gender,status,role,partHour, partAmHour):
+    def __init__(self, id=None, name="", age=0, gender="", status="", role=None,partHour =0, partAmHour =0.0):
         
         #call parent class' constructor
-        super().__init__(employeeID,name,age,gender,status,role)
+        super().__init__(id,name,age,gender,status,role)
         
         #child specific fields
         self.partHour = partHour
