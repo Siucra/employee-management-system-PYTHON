@@ -118,6 +118,7 @@ def addFullEmployee(fe):
 
 def main():
     prepopulate()
+    employeeMenu()
 
 if __name__ == "__main__": # calls main method
     main()

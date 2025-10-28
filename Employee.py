@@ -4,8 +4,8 @@ from Role import Role;
 class Employee:
 
     #Constructor with Fields
-    def __init__(self, employeeID,name,age,gender,status,role):
-        self.employeeID = employeeID
+    def __init__(self, id=None,name="",age=0,gender="",status="",role=None):
+        self.id = id
         self.name = name
         self.age = age
         self.gender = gender
@@ -20,7 +20,7 @@ class Employee:
 def __str__(self):
     base = (
         f"Employee("
-        f"employeeID={self.employeeID}, "
+        f"id={self.id}, "
         f"name={self.name}, "
         f"age={self.age}, "
         f"gender={self.gender}, "
