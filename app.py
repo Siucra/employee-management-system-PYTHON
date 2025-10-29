@@ -115,13 +115,18 @@ def addPartEmployee(pe):
     pe.partAmHour = float(input("Enter amount per hour: "))
 
     pe.viewEmployeeDetails()
-    input("Are you sure you want to create a Part time employee (YES/NO): ")
-    #addPartEmpConfirmation(pe)
 
-
-def addPartEmpConfirmation(pe):
-    pass
-
+    while True:
+        choice = input("Are you sure you want to create a Part time employee (YES/NO): ")
+        if choice =="yes".lower:
+            print(f"Employee {pe.name} has been added.")
+            break
+        elif choice == "no".lower:
+            print(f"Discarded employee record {pe.name}.")
+            break
+        else:
+            print(f"Invalid entry, discarded employee record {pe.name}.")
+            break
 
 
 def addFullEmployee(fe):
