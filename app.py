@@ -58,10 +58,10 @@ def addEmployeeMenu():
     id_generator = gen_id(1)
     e = Employee(next(id_generator)) # ceeate new employee with next available ID
 
-    e.name = input("Enter Employee name")
+    e.name = input("Enter Employee name: ")
 
     while True:
-        ageInput = input("Enter Employee age")
+        ageInput = input("Enter Employee age: ")
         if ageInput.isdigit(): #error catching without using try/except -> checks if user entered only integers
             e.age = int(ageInput)
             if e.age > 0:
@@ -79,20 +79,20 @@ def addEmployeeMenu():
             print("Invalid input. Please either enter 'Male' or 'Female")
     
     while(True):
-        e.status = input("Enter Employee status: Junior/Senior")
+        e.status = input("Enter Employee status: Junior/Senior ")
         if e.status.lower() =="junior" or e.status.lower()=="senior":
             break
         else:
             print("invalid input. Please enter 'Junior' or 'Senior'")
 
-    r = Role()
+    title = input("Enter Employee Job Title: ")
+    salary = float(input("Enter employee annual salary: "))
 
-    r.title = input("Enter Employee Job Title")
-    r.salary = float(input("Enter employee annual salary"))
+    r = Role(title,salary)
 
     while(True):
         print("-"*15)
-        empType = input("Is this Employee Part/Full? Enter  ('Part' or 'Full')")
+        empType = input("Is this Employee Part/Full? Enter  ('Part' or 'Full') ")
         
         if empType.lower() == 'part':
             print("'Part' option has been selected")
@@ -101,7 +101,7 @@ def addEmployeeMenu():
             break
         
         elif empType.lower() == 'full':
-            print("'Part' option has been selected")
+            print("'Full' option has been selected")
             fe = FullEmployee(e,r)
             addFullEmployee(fe)
             break
@@ -111,7 +111,18 @@ def addEmployeeMenu():
             
 
 def addPartEmployee(pe):
+    pe.partHour = input("Add part time hours: (15-30) ")
+    pe.partAmHour = float(input("Enter amount per hour: "))
+
+    pe.viewEmployeeDetails()
+    input("Are you sure you want to create a Part time employee (YES/NO): ")
+    #addPartEmpConfirmation(pe)
+
+
+def addPartEmpConfirmation(pe):
     pass
+
+
 
 def addFullEmployee(fe):
     pass

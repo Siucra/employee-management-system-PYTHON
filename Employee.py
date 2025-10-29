@@ -17,20 +17,20 @@ class Employee:
         print(self) # aka print(str(self)) -> uses __str__()
         
         
-def __str__(self):
-    base = (
-        f"Employee("
-        f"id={self.id}, "
-        f"name={self.name}, "
-        f"age={self.age}, "
-        f"gender={self.gender}, "
-        f"status={self.status}"
-    )
+    def __str__(self):
+        base = (
+            f"Employee("
+            f"id={self.id}, "
+            f"name={self.name}, "
+            f"age={self.age}, "
+            f"gender={self.gender}, "
+            f"status={self.status}"
+        )
 
-    if self.role is not None:
-        base += f", role={self.role}"
+        if self.role is not None:
+            base += f", role={self.role}"
 
-    base += ")"
-    return base
+        base += ")"
+        return base
 
     
