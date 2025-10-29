@@ -20,15 +20,15 @@ class Employee:
     def __str__(self):
         base = (
             f"Employee("
-            f"id={self.id}, "
-            f"name={self.name}, "
-            f"age={self.age}, "
-            f"gender={self.gender}, "
-            f"status={self.status}"
+            f"id = {self.id}, "
+            f"name = {self.name}, "
+            f"age = {self.age}, "
+            f"gender = {self.gender}, "
+            f"status = {self.status}"
         )
 
         if self.role is not None:
-            base += f", role={self.role}"
+            base += f", role = {self.role}"
 
         base += ")"
         return base
