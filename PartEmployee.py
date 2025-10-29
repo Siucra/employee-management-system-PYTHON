@@ -17,3 +17,8 @@ class PartEmployee(Employee):
         #get base info from parent
         base = super().__str__().rstrip(")") # remove closing parenthesis
         return base + f" Part-time hours = {self.partHour}\n Amount per hour ={self.partAmHour})"
+    
+#belongs to the class - recieves class (cls) - no need to manually unpack every field when converting Employee to partEmployee    
+@classmethod
+def from_employee(cls,emp,role):
+    return cls(emp.id,emp.name,emp.age,emp.gender,emp.status,role)    
