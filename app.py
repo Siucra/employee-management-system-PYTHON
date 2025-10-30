@@ -114,11 +114,24 @@ def addPartEmployee(pe):
     pe.partHour = input("Add part time hours: (15-30) ")
     pe.partAmHour = float(input("Enter amount per hour: "))
 
-    pe.viewEmployeeDetails()
+    print(f"\n--- Preview of New Part-Time Employee {pe.name}---")
+    print(f"ID: {pe.id}")
+    print(f"Name: {pe.name}")
+    print(f"Age: {pe.age}")
+    print(f"Gender: {pe.gender}")
+    print(f"Status: {pe.status}")
+    print(f"Role: {pe.r}")
+    print(f"Full-time hours: {pe.partHours}")
+    print(f"Amount per hour: {pe.partAmHour}")
+
 
     while True:
         choice = input("Are you sure you want to create a Part time employee (YES/NO): ")
         if choice =="yes".lower:
+            pe = PartEmployee.from_employee(e,r)
+            pe.partHour = partHour
+            pe.partAmHour = partAmHour
+            #employee_list.append(pe)
             print(f"Employee {pe.name} has been added.")
             break
         elif choice == "no".lower:
