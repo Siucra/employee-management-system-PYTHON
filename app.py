@@ -96,8 +96,8 @@ def addEmployeeMenu():
         
         if empType.lower() == 'part':
             print("'Part' option has been selected")
-            pe = PartEmployee(e,r)
-            addPartEmployee(pe)
+           # PartEmployee(e,r)
+            addPartEmployee(e,r)
             break
         
         elif empType.lower() == 'full':
@@ -110,35 +110,38 @@ def addEmployeeMenu():
             print("Invalid input. Please try again.")
             
 
-def addPartEmployee(pe):
-    pe.partHour = input("Add part time hours: (15-30) ")
-    pe.partAmHour = float(input("Enter amount per hour: "))
+def addPartEmployee(e,r):
+    partHour = int(input("Add part time hours: (15-30) "))
+    partAmHour = float(input("Enter amount per hour: "))
 
-    print(f"\n--- Preview of New Part-Time Employee {pe.name}---")
-    print(f"ID: {pe.id}")
-    print(f"Name: {pe.name}")
-    print(f"Age: {pe.age}")
-    print(f"Gender: {pe.gender}")
-    print(f"Status: {pe.status}")
-    print(f"Role: {pe.r}")
-    print(f"Full-time hours: {pe.partHours}")
-    print(f"Amount per hour: {pe.partAmHour}")
+    print(f"\n--- Preview of New Part-Time Employee---")
+    print(f"ID: {e.id}")
+    print(f"Name: {e.name}")
+    print(f"Age: {e.age}")
+    print(f"Gender: {e.gender}")
+    print(f"Status: {e.status}")
+    print(f"Role Title: {r.title}")
+    print(f"Role Salart: {r.salary}")
+    print(f"Full-time hours: {partHour}")
+    print(f"Amount per hour: {partAmHour}")
 
 
     while True:
         choice = input("Are you sure you want to create a Part time employee (YES/NO): ")
-        if choice =="yes".lower:
+        
+        if choice =="yes".strip().lower():
             pe = PartEmployee.from_employee(e,r)
             pe.partHour = partHour
             pe.partAmHour = partAmHour
-            #employee_list.append(pe)
+            employee_list.append(pe)
             print(f"Employee {pe.name} has been added.")
             break
-        elif choice == "no".lower:
+
+        elif choice == "no".strip().lower():
             print(f"Discarded employee record {pe.name}.")
             break
         else:
-            print(f"Invalid entry, discarded employee record {pe.name}.")
+            print(f"Invalid entry, discarded employee record {e.name}.")
             break
 
 
