@@ -42,7 +42,9 @@ def employeeMenu():
             break
         elif choice =="4":
             print("Loading view employee....")
-            #viewEmployee
+            for emp in employee_list:
+                emp.viewEmployeeDetails()
+                print("-"*20)
             break
         else:
             print("invalid input. Please try again")

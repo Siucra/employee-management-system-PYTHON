@@ -28,7 +28,7 @@ class Employee:
         )
 
         if self.role is not None:
-            base += f", role = {self.role}"
+            base += f"role = {self.role}\n"
 
         base += ")"
         return base

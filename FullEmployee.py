@@ -16,7 +16,7 @@ class FullEmployee(Employee):
     def __str__(self):
         #get base info from parent
         base = super().__str__().rstrip(")") #remove closing parenthesis
-        return base + f", full-time hours ={self.fullHours}\n, amount per hour ={self.fullAmHour})"
+        return base + f")\nfull-time hours = {self.fullHours}\n amount per hour ={self.fullAmHour}"
 
 @classmethod
 def from_employee(cls,emp,role):
