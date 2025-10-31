@@ -18,5 +18,7 @@ class FullEmployee(Employee):
         base = super().__str__().rstrip(")") #remove closing parenthesis
         return base + f", full-time hours ={self.fullHours}\n, amount per hour ={self.fullAmHour})"
 
-
+@classmethod
+def from_employee(cls,emp,role):
+    return cls(emp.id,emp.name,emp.age,emp.gender,emp.status,role)   
         
