@@ -102,8 +102,7 @@ def addEmployeeMenu():
         
         elif empType.lower() == 'full':
             print("'Full' option has been selected")
-            fe = FullEmployee(e,r)
-            addFullEmployee(fe)
+            addFullEmployee(e,r)
             break
         
         else:
@@ -125,7 +124,6 @@ def addPartEmployee(e,r):
     print(f"Full-time hours: {partHour}")
     print(f"Amount per hour: {partAmHour}")
 
-
     while True:
         choice = input("Are you sure you want to create a Part time employee (YES/NO): ")
         
@@ -145,8 +143,38 @@ def addPartEmployee(e,r):
             break
 
 
-def addFullEmployee(fe):
-    pass
+def addFullEmployee(e,r):
+    fullHours = int(input("Add full time hours: (30-40) "))
+    fullAmHour = float(input("Enter amount per hour: "))
+
+    print(f"\n--- Preview of New Full-Time Employee---")
+    print(f"ID: {e.id}")
+    print(f"Name: {e.name}")
+    print(f"Age: {e.age}")
+    print(f"Gender: {e.gender}")
+    print(f"Status: {e.status}")
+    print(f"Role Title: {r.title}")
+    print(f"Role Salart: {r.salary}")
+    print(f"Full-time hours: {fullHours}")
+    print(f"Amount per hour: {fullAmHour}")
+
+    while True:
+        choice = input("Are you sure you want to create a Full time employee (YES/NO): ")
+        
+        if choice =="yes".strip().lower():
+            fe = PartEmployee.from_employee(e,r)
+            fe.fullHours = fullHours
+            fe.fullAmHour = fullAmHour
+            employee_list.append(fe)
+            print(f"Employee {fe.name} has been added.")
+            break
+
+        elif choice == "no".strip().lower():
+            print(f"Discarded employee record {fe.name}.")
+            break
+        else:
+            print(f"Invalid entry, discarded employee record {e.name}.")
+            break
 
 def main():
     prepopulate()
