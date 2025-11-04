@@ -34,7 +34,7 @@ def employeeMenu():
             break
         elif choice =="2":
             print("Loading edit employee....")
-            #editEmployee()
+            editEmployee()
             break
         elif choice =="3":
             print("Loading fire employee....")
@@ -177,6 +177,13 @@ def addFullEmployee(e,r):
         else:
             print(f"Invalid entry, discarded employee record {e.name}.")
             break
+
+def editEmployee():
+    for emp in employee_list:
+        emp.viewEmployeeDetails()
+        print("-"*20)
+        break
+    
 
 def main():
     prepopulate()
