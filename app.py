@@ -183,6 +183,14 @@ def editEmployee():
         emp.viewEmployeeDetails()
         print("-"*20)
         break
+
+    user_input = input("Enter Employee ID you wish to edit")
+    if not user_input.isdigit():
+        print("Invalid ID. Please try again.")
+        return
+    
+    searchID = int(user_input)
+    id_is_found = False
     
 
 def main():
