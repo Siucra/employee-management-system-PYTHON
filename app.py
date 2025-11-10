@@ -34,6 +34,7 @@ def employeeMenu():
             break
         elif choice =="2":
             print("Loading edit employee....")
+            print("-"*20)
             editEmployee()
             break
         elif choice =="3":
@@ -42,6 +43,7 @@ def employeeMenu():
             break
         elif choice =="4":
             print("Loading view employee....")
+            print("-"*20)
             for emp in employee_list:
                 emp.viewEmployeeDetails()
                 print("-"*20)
@@ -184,7 +186,7 @@ def editEmployee():
         print("-"*20)
         break
 
-    user_input = input("Enter Employee ID you wish to edit")
+    user_input = input("Enter Employee ID you wish to edit: ")
     if not user_input.isdigit():
         print("Invalid ID. Please try again.")
         return
