@@ -202,9 +202,11 @@ def editEmployee():
             if choice =="yes".strip().lower():
                 print("Loading edit menu....")
                 editEmployeeMenu()
-            else:
+            elif choice == "no".strip().lower():
                 print("Edit employee cancelled. Returning to main menu.")
-                employeeMenu
+                employeeMenu()
+            else:
+                print("Invalid entry.")
 
     if(not id_is_found):
         print("Employee ID not found. Please enter a valid ID.")
