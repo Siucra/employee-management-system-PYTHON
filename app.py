@@ -193,7 +193,24 @@ def editEmployee():
     
     searchID = int(user_input)
     id_is_found = False
-    
+
+    for emp in employee_list:
+        if(searchID == emp.id):
+            id_is_found = True
+            print(f"You have selected {emp.name}, ID {emp.id}")
+            choice = print("Are you sure you want to edit this Employee?")
+            if choice =="yes".strip().lower():
+                print("Loading edit menu....")
+                editEmployeeMenu()
+            else:
+                print("Edit employee cancelled. Returning to main menu.")
+                employeeMenu
+
+    if(not id_is_found):
+        print("Employee ID not found. Please enter a valid ID.")
+
+def editEmployeeMenu():
+    pass
 
 def main():
     prepopulate()
