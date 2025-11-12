@@ -184,7 +184,6 @@ def editEmployee():
     for emp in employee_list:
         emp.viewEmployeeDetails()
         print("-"*20)
-        break
 
     user_input = input("Enter Employee ID you wish to edit: ")
     if not user_input.isdigit():
@@ -198,11 +197,11 @@ def editEmployee():
         if(searchID == emp.id):
             id_is_found = True
             print(f"You have selected {emp.name}, ID {emp.id}")
-            choice = print("Are you sure you want to edit this Employee?")
-            if choice =="yes".strip().lower():
+            choice = input("Are you sure you want to edit this Employee?").strip().lower()
+            if choice =="yes":
                 print("Loading edit menu....")
                 editEmployeeMenu(searchID)
-            elif choice == "no".strip().lower():
+            elif choice == "no":
                 print("Edit employee cancelled. Returning to main menu.")
                 employeeMenu()
             else:
@@ -235,7 +234,7 @@ def editEmployeeMenu(searchID):
             pass
         elif choice =="6":
             pass
-        elif choice =="m".lower():
+        elif choice =="m":
             pass
         else:
             print("Invalid input. Please try again.")
