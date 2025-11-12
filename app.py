@@ -200,7 +200,7 @@ def editEmployee():
             choice = input("Are you sure you want to edit this Employee?").strip().lower()
             if choice =="yes":
                 print("Loading edit menu....")
-                editEmployeeMenu(searchID)
+                editEmployeeMenu(emp)
             elif choice == "no":
                 print("Edit employee cancelled. Returning to main menu.")
                 employeeMenu()
@@ -210,7 +210,7 @@ def editEmployee():
     if(not id_is_found):
         print("Employee ID not found. Please enter a valid ID.")
 
-def editEmployeeMenu(searchID):
+def editEmployeeMenu(emp):
     while True:
         print("-"*16)
         print("1 - Edit Employee Name.")
@@ -223,19 +223,33 @@ def editEmployeeMenu(searchID):
         print("-"*16)
         choice = input("choose an option: ")
         if choice =="1":
-            pass
+            emp.name = input("Enter name: ")
+            print("Name changed successfully.")
+
         elif choice =="2":
-            pass
+            emp.age = input("Enter age: ")
+            print("Age changed successfully.")
+        
         elif choice =="3":
-            pass
+            emp.gender = input("Enter gender: ")
+            print("Gender changed successfully.")
+        
         elif choice =="4":
-            pass
+            emp.status = input("Enter Status: ")
+            print("Status changed successfully.")
+        
         elif choice =="5":
-            pass
+            emp.role = input("Enter Role: ")
+            print("Role changed successfully.")
+        
         elif choice =="6":
-            pass
+            emp.salary = input("Enter Salary: ")
+            print("Salary changed successfully.")
+        
         elif choice =="m":
-            pass
+            print("Returning to main menu...")
+            employeeMenu()
+
         else:
             print("Invalid input. Please try again.")
 
