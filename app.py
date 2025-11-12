@@ -201,7 +201,7 @@ def editEmployee():
             choice = print("Are you sure you want to edit this Employee?")
             if choice =="yes".strip().lower():
                 print("Loading edit menu....")
-                editEmployeeMenu()
+                editEmployeeMenu(searchID)
             elif choice == "no".strip().lower():
                 print("Edit employee cancelled. Returning to main menu.")
                 employeeMenu()
@@ -211,8 +211,34 @@ def editEmployee():
     if(not id_is_found):
         print("Employee ID not found. Please enter a valid ID.")
 
-def editEmployeeMenu():
-    pass
+def editEmployeeMenu(searchID):
+    while True:
+        print("-"*16)
+        print("1 - Edit Employee Name.")
+        print("2 - Edit Employee Age.")
+        print("3 - Edit Employee Gender.")
+        print("4 - Edit Employee Status.")
+        print("5 - Edit Employee Role.")
+        print("6 - Edit Employee Salary.")
+        print("M - Return to Main Menu.")
+        print("-"*16)
+        choice = input("choose an option: ")
+        if choice =="1":
+            pass
+        elif choice =="2":
+            pass
+        elif choice =="3":
+            pass
+        elif choice =="4":
+            pass
+        elif choice =="5":
+            pass
+        elif choice =="6":
+            pass
+        elif choice =="m".lower():
+            pass
+        else:
+            print("Invalid input. Please try again.")
 
 def main():
     prepopulate()
