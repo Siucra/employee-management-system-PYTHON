@@ -39,7 +39,7 @@ def employeeMenu():
             break
         elif choice =="3":
             print("Loading fire employee....")
-            #fireEmployee
+            fireEmployee()
             break
         elif choice =="4":
             print("Loading view employee....")
@@ -252,6 +252,35 @@ def editEmployeeMenu(emp):
 
         else:
             print("Invalid input. Please try again.")
+
+def fireEmployee():
+    for emp in employee_list:
+        emp.viewEmployeeDetails()
+        print("-"*20)
+
+    user_input = input("Enter Employee ID you wish to delete: ")
+    if not user_input.isdigit():
+        print("Invalid ID. Please try again.")
+        return
+    
+    searchID = int(user_input)
+    id_is_found = False
+
+    for emp in employee_list:
+        if(searchID == emp.id):
+            id_is_found = True
+            print(f"You have selected {emp.name}, ID {emp.id}")
+            choice = input("Are you sure you want to edit this Employee?").strip().lower()
+            if choice =="yes":
+                pass
+            elif choice == "no":
+                print("Fire employee cancelled. Returning to main menu.")
+                employeeMenu()
+            else:
+                print("Invalid entry.")
+
+    if(not id_is_found):
+        print("Employee ID not found. Please enter a valid ID.")
 
 def main():
     prepopulate()
