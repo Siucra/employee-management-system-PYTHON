@@ -272,7 +272,10 @@ def fireEmployee():
             print(f"You have selected {emp.name}, ID {emp.id}")
             choice = input("Are you sure you want to edit this Employee?").strip().lower()
             if choice =="yes":
-                pass
+                print("*"*20)
+                print(f"{emp.name} has been removed.")
+                employee_list.remove(emp)
+                print("*"*20)
             elif choice == "no":
                 print("Fire employee cancelled. Returning to main menu.")
                 employeeMenu()
