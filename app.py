@@ -47,6 +47,7 @@ def employeeMenu():
             for emp in employee_list:
                 emp.viewEmployeeDetails()
                 print("-"*20)
+                employeeMenu()
             break
         else:
             print("invalid input. Please try again")
@@ -270,12 +271,13 @@ def fireEmployee():
         if(searchID == emp.id):
             id_is_found = True
             print(f"You have selected {emp.name}, ID {emp.id}")
-            choice = input("Are you sure you want to edit this Employee?").strip().lower()
+            choice = input("Are you sure you want to edit this Employee? ").strip().lower()
             if choice =="yes":
                 print("*"*20)
                 print(f"{emp.name} has been removed.")
                 employee_list.remove(emp)
                 print("*"*20)
+                employeeMenu()
             elif choice == "no":
                 print("Fire employee cancelled. Returning to main menu.")
                 employeeMenu()
